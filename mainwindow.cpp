@@ -48,5 +48,8 @@ int MainWindow::createTableProxyItem(QString host, QString port, QString type)
     QTableWidgetItem *typeItem = new QTableWidgetItem(type);
     ui->proxiesList->setItem(rowIndex, 2, typeItem);
 
+    QTableWidgetItem *statusItem = new QTableWidgetItem("Not checked");
+    ui->proxiesList->setItem(rowIndex, 3, statusItem);
+
     return rowIndex;
 }
