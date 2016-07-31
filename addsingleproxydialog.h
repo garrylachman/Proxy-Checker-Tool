@@ -27,6 +27,9 @@ public:
     int getProxyPort();
     int getProxyType();
 
+private slots:
+    void on_isAuth_toggled(bool checked);
+
 private:
     Ui::AddSingleProxyDialog *ui;
 };

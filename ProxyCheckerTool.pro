@@ -19,7 +19,8 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     addsingleproxydialog.h \
-    helpers.h
+    helpers.h \
+    customcolorplaceholderlineedit.h
 
 FORMS    += mainwindow.ui \
     addsingleproxydialog.ui

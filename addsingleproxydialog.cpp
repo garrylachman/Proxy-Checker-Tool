@@ -10,11 +10,17 @@
 #include "addsingleproxydialog.h"
 #include "ui_addsingleproxydialog.h"
 
+#include <qdebug.h>
+
 AddSingleProxyDialog::AddSingleProxyDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AddSingleProxyDialog)
 {
     ui->setupUi(this);
+    ui->host->setCustomPlaceholderText(QString("Hostname / IP"));
+    ui->port->setCustomPlaceholderText(QString("Port"));
+    ui->username->setCustomPlaceholderText(QString("Username"));
+    ui->password->setCustomPlaceholderText(QString("Password"));
 }
 
 AddSingleProxyDialog::~AddSingleProxyDialog()
@@ -37,4 +43,10 @@ int AddSingleProxyDialog::getProxyPort() {
 
 int AddSingleProxyDialog::getProxyType() {
     return ui->type->currentIndex();
+}
+
+void AddSingleProxyDialog::on_isAuth_toggled(bool checked)
+{
+    ui->username->setEnabled(checked);
+    ui->password->setEnabled(checked);
 }
